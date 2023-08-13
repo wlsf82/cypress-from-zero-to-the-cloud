@@ -1,0 +1,26 @@
+{
+  "name": "cypress-from-zero-to-the-cloud",
+  "version": "1.0.0",
+  "description": "English version the 🌲 Cypress, from Zero to the Cloud ☁️ course, from the Talking About Testing online school.",
+  "main": "src/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wlsf82/cypress-from-zero-to-the-cloud.git"
+  },
+  "keywords": [
+    "Testing",
+    "Cypress.io",
+    "Talking About Testing",
+    "Cypress basic",
+    "Cypress, from Zero to the Cloud",
+    "Cypress cloud",
+    "GitHub Actions",
+    "TAT School"
+  ],
+  "author": "Walmyr <wlsf82@gmail.com> (https://walmyr.dev/)",
+  "license": "MIT",
+  "homepage": "https://github.com/wlsf82/cypress-from-zero-to-the-cloud#readme"
+}

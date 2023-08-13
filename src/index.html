@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>TAT Customer Service Center</title>
+  </head>
+  <body>
+    <div>
+      <h1 id="title">TAT CSC 🧑‍💻</h1>
+      <p id="subtitle">Please, provide as much information as possible.</p>
+      <br />
+    </div>
+    <span class="success">
+      <strong>Message successfully sent.</strong>
+    </span>
+    <span class="error">
+      <strong>Validate the required fields!</strong>
+    </span>
+    <div id="white-background">
+      <span id="cat">🐈</span>
+      <form>
+        <fieldset class="group">
+          <div class="field">
+            <label for="firstName"><strong>First name</strong><span class="required-mark"> (required)</span></label>
+            <input type="text" name="firstName" id="firstName" required />
+          </div>
+          <div class="field">
+            <label for="lastName"><strong>Last name</strong><span class="required-mark"> (required)</span></label>
+            <input type="text" name="lastName" id="lastName" required />
+          </div>
+        </fieldset>
+        <fieldset class="group">
+          <div class="field">
+            <label for="email"><strong>Email</strong><span class="required-mark"> (required)</span></label>
+            <input type="email" name="email" id="email" required />
+          </div>
+          <div class="field">
+            <label for="phone"><strong>Phone</strong><span class="phone-label-span required-mark"> (required)</span></label>
+            <input type="number" name="phone" id="phone" />
+          </div>
+        </fieldset>
+        <div class="field">
+          <label for="product"><strong>Product</strong></label>
+          <select id="product">
+            <option selected disabled value="">Select</option>
+            <option value="blog">Blog</option>
+            <option value="courses">Courses</option>
+            <option value="mentorship">Mentorship</option>
+            <option value="youtube">YouTube</option>
+          </select>
+        </div>
+        <div id="support-type" class="field">
+          <label><strong>Type of service</strong></label>
+          <label>
+            <input type="radio" name="tat-service" value="help" checked />Help
+          </label>
+          <label>
+            <input type="radio" name="tat-service" value="praise" />Praise
+          </label>
+          <label>
+            <input type="radio" name="tat-service" value="feedback" />Feedback
+          </label>
+        </div>
+        <fieldset class="group">
+          <div id="check">
+            <label><strong>What is your preferred means of contact?</strong></label>
+            <br />
+            <input type="checkbox" id="email-checkbox" name="email" value="email" />
+            <label for="email">E-mail</label>
+            <input type="checkbox" id="phone-checkbox" name="phone" value="phone" />
+            <label for="phone">Phone</label>
+          </div>
+        </fieldset>
+        <div class="field">
+          <br />
+          <label for="open-text-area"><strong>How can we help you? <br />Any praise or feedback for us?</strong><span class="required-mark"> (required)</span></label>
+          <textarea row="6" id="open-text-area" name="open-text-area" required></textarea>
+        </div>
+        <div class="field">
+          <label><strong>Attach a file</strong></label>
+          <input id="file-upload" type="file">
+        </div>
+        <button type="submit" class="button">Send</button>
+        <div id="privacy">
+          <a href="privacy.html" target="_blank">Privacy Policy</a>
+        </div>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
