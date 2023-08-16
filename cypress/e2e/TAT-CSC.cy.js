@@ -74,4 +74,10 @@ describe('TAT Customer Service Center', () => {
 
     cy.get('.error').should('be.visible')
   })
+
+  it('successfully submits the form using a custom command', () => {
+    cy.fillMandatoryFieldsAndSubmit()
+
+    cy.get('.success').should('be.visible')
+  })
 })
