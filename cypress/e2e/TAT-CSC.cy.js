@@ -14,7 +14,7 @@ describe('TAT Customer Service Center', () => {
     cy.get('#lastName').type('Lima e Silva Filho')
     cy.get('#email').type('walmyr@talkingabouttesting.com')
     cy.get('#open-text-area').type(longText, { delay: 0 })
-    cy.get('button[type="submit"]').click()
+    cy.contains('button', 'Send').click()
 
     cy.get('.success').should('be.visible')
   })
@@ -24,7 +24,7 @@ describe('TAT Customer Service Center', () => {
     cy.get('#lastName').type('Lima e Silva Filho')
     cy.get('#email').type('walmyr@talkingabouttesting,com')
     cy.get('#open-text-area').type('Test')
-    cy.get('button[type="submit"]').click()
+    cy.contains('button', 'Send').click()
 
     cy.get('.error').should('be.visible')
   })
@@ -41,7 +41,7 @@ describe('TAT Customer Service Center', () => {
     cy.get('#email').type('walmyr@talkingabouttesting.com')
     cy.get('#open-text-area').type('Test')
     cy.get('#phone-checkbox').click()
-    cy.get('button[type="submit"]').click()
+    cy.contains('button', 'Send').click()
 
     cy.get('.error').should('be.visible')
   })
@@ -70,7 +70,7 @@ describe('TAT Customer Service Center', () => {
   })
 
   it('displays an error message when submitting the form without filling the required fields', () => {
-    cy.get('button[type="submit"]').click()
+    cy.contains('button', 'Send').click()
 
     cy.get('.error').should('be.visible')
   })
