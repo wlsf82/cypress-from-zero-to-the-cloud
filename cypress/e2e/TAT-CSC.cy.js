@@ -80,4 +80,10 @@ describe('TAT Customer Service Center', () => {
 
     cy.get('.success').should('be.visible')
   })
+
+  it('selects a product (YouTube) by its content', () => {
+    cy.get('#product')
+      .select('YouTube')
+      .should('have.value', 'youtube')
+  })
 })
