@@ -34,4 +34,15 @@ describe('TAT Customer Service Center', () => {
       .type('abcde')
       .should('have.value', '')
   })
+
+  it('displays an error message when the phone becomes required but is not filled in before the form submission', () => {
+    cy.get('#firstName').type('Walmyr')
+    cy.get('#lastName').type('Lima e Silva Filho')
+    cy.get('#email').type('walmyr@talkingabouttesting.com')
+    cy.get('#open-text-area').type('Test')
+    cy.get('#phone-checkbox').click()
+    cy.get('button[type="submit"]').click()
+
+    cy.get('.error').should('be.visible')
+  })
 })
