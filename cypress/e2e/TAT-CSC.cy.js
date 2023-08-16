@@ -40,7 +40,7 @@ describe('TAT Customer Service Center', () => {
     cy.get('#lastName').type('Lima e Silva Filho')
     cy.get('#email').type('walmyr@talkingabouttesting.com')
     cy.get('#open-text-area').type('Test')
-    cy.get('#phone-checkbox').click()
+    cy.get('#phone-checkbox').check()
     cy.contains('button', 'Send').click()
 
     cy.get('.error').should('be.visible')
