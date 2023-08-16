@@ -114,4 +114,13 @@ describe('TAT Customer Service Center', () => {
           .should('be.checked')
       })
   })
+
+  it('checks both checkboxes, then unchecks the last one', () => {
+    cy.get('input[type="checkbox"]')
+      .check()
+      .should('be.checked')
+      .last()
+      .uncheck()
+      .should('not.be.checked')
+  })
 })
