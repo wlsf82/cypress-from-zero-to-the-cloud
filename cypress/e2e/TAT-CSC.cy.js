@@ -86,4 +86,10 @@ describe('TAT Customer Service Center', () => {
       .select('YouTube')
       .should('have.value', 'youtube')
   })
+
+  it('selects a product (Mentorship) by its value', () => {
+    cy.get('#product')
+      .select('mentorship')
+      .should('have.value', 'mentorship')
+  })
 })
