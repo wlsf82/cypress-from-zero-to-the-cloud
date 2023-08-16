@@ -22,5 +22,8 @@
   ],
   "author": "Walmyr <wlsf82@gmail.com> (https://walmyr.dev/)",
   "license": "MIT",
-  "homepage": "https://github.com/wlsf82/cypress-from-zero-to-the-cloud#readme"
+  "homepage": "https://github.com/wlsf82/cypress-from-zero-to-the-cloud#readme",
+  "devDependencies": {
+    "cypress": "https://cdn.cypress.io/beta/npm/13.0.0/linux-x64/release/13.0.0-5d1e07a7aa228745b5e742aa3e912fcbd4cb217f/cypress.tgz"
+  }
 }
