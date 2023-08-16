@@ -154,4 +154,12 @@ describe('TAT Customer Service Center', () => {
       .should('have.attr', 'href', 'privacy.html')
       .and('have.attr', 'target', '_blank')
   })
+
+  it('access the privacy policy page by removing the target, then clicking on the link', () => {
+    cy.contains('a', 'Privacy Policy')
+      .invoke('removeAttr', 'target')
+      .click()
+
+    cy.contains('h1', 'TAT CSC - Privacy Policy').should('be.visible')
+  })
 })
