@@ -131,4 +131,12 @@ describe('TAT Customer Service Center', () => {
         expect(input[0].files[0].name).to.equal('example.json')
       })
   })
+
+  it('selects a file simulating a drag-and-drop', () => {
+    cy.get('input[type="file"]')
+      .selectFile('cypress/fixtures/example.json', { action: 'drag-drop' })
+      .should(input => {
+        expect(input[0].files[0].name).to.equal('example.json')
+      })
+  })
 })
