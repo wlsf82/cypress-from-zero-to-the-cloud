@@ -98,4 +98,10 @@ describe('TAT Customer Service Center', () => {
       .select(1)
       .should('have.value', 'blog')
   })
+
+  it('checks the type of service "Feedback"', () => {
+    cy.get('input[type="radio"][value="feedback"]')
+      .check()
+      .should('be.checked')
+  })
 })
