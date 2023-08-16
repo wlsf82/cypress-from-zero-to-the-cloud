@@ -18,4 +18,14 @@ describe('TAT Customer Service Center', () => {
 
     cy.get('.success').should('be.visible')
   })
+
+  it('displays an error message when submitting the form with an email with invalid formatting', () => {
+    cy.get('#firstName').type('Walmyr')
+    cy.get('#lastName').type('Lima e Silva Filho')
+    cy.get('#email').type('walmyr@talkingabouttesting,com')
+    cy.get('#open-text-area').type('Test')
+    cy.get('button[type="submit"]').click()
+
+    cy.get('.error').should('be.visible')
+  })
 })
