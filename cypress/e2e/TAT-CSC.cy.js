@@ -28,4 +28,10 @@ describe('TAT Customer Service Center', () => {
 
     cy.get('.error').should('be.visible')
   })
+
+  it('validates that the phone input field only accepts numbers', () => {
+    cy.get('#phone')
+      .type('abcde')
+      .should('have.value', '')
+  })
 })
