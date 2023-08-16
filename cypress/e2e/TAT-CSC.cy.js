@@ -123,4 +123,12 @@ describe('TAT Customer Service Center', () => {
       .uncheck()
       .should('not.be.checked')
   })
+
+  it('selects a file from the fixtures folder', () => {
+    cy.get('input[type="file"]')
+      .selectFile('cypress/fixtures/example.json')
+      .should(input => {
+        expect(input[0].files[0].name).to.equal('example.json')
+      })
+  })
 })
