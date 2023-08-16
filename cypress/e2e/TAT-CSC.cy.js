@@ -104,4 +104,14 @@ describe('TAT Customer Service Center', () => {
       .check()
       .should('be.checked')
   })
+
+  it('checks each type of service', () => {
+    cy.get('#support-type')
+      .find('input[type="radio"]')
+      .each(typeOfService => {
+        cy.wrap(typeOfService)
+          .check()
+          .should('be.checked')
+      })
+  })
 })
