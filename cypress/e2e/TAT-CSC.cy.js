@@ -227,4 +227,10 @@ describe('TAT Customer Service Center', () => {
       .its('body')
       .should('include', 'TAT CSC')
   })
+
+  it('finds the hidden cat', () => {
+    cy.get('#cat')
+      .invoke('show')
+      .should('be.visible')
+  })
 })
