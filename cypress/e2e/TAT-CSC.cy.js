@@ -192,4 +192,21 @@ describe('TAT Customer Service Center', () => {
 
     cy.contains('h1', 'TAT CSC - Privacy Policy').should('be.visible')
   })
+
+  it('displays and hide the success and error messages using .invoke', () => {
+    cy.get('.success')
+      .should('not.be.visible')
+      .invoke('show')
+      .should('be.visible')
+      .and('contain', 'Message successfully sent.')
+      .invoke('hide')
+      .should('not.be.visible')
+    cy.get('.error')
+      .should('not.be.visible')
+      .invoke('show')
+      .should('be.visible')
+      .and('contain', 'Validate the required fields!')
+      .invoke('hide')
+      .should('not.be.visible')
+  })
 })
