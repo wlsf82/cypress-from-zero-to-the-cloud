@@ -214,4 +214,17 @@ describe('TAT Customer Service Center', () => {
     cy.get('#open-text-area').invoke('val', 'some text')
       .should('have.value', 'some text')
   })
+
+  it('makes an HTTP request', () => {
+    cy.request('https://tat-csc.s3.sa-east-1.amazonaws.com/index.html')
+      .as('getRequest')
+      .its('status')
+      .should('be.equal', 200)
+    cy.get('@getRequest')
+      .its('statusText')
+      .should('be.equal', 'OK')
+    cy.get('@getRequest')
+      .its('body')
+      .should('include', 'TAT CSC')
+  })
 })
