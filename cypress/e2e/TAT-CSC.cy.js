@@ -8,6 +8,8 @@ describe('TAT Customer Service Center', () => {
   })
 
   it('fills in the required fields and submits the form', () => {
+    cy.clock()
+
     const longText = Cypress._.repeat('abcdefghijklmnopqrstuvwxyz', 10)
 
     cy.get('#firstName').type('Walmyr')
@@ -17,9 +19,15 @@ describe('TAT Customer Service Center', () => {
     cy.contains('button', 'Send').click()
 
     cy.get('.success').should('be.visible')
+
+    cy.tick(3000)
+
+    cy.get('.success').should('not.be.visible')
   })
 
   it('displays an error message when submitting the form with an email with invalid formatting', () => {
+    cy.clock()
+
     cy.get('#firstName').type('Walmyr')
     cy.get('#lastName').type('Lima e Silva Filho')
     cy.get('#email').type('walmyr@talkingabouttesting,com')
@@ -27,6 +35,10 @@ describe('TAT Customer Service Center', () => {
     cy.contains('button', 'Send').click()
 
     cy.get('.error').should('be.visible')
+
+    cy.tick(3000)
+
+    cy.get('.error').should('not.be.visible')
   })
 
   it('validates that the phone input field only accepts numbers', () => {
@@ -36,6 +48,8 @@ describe('TAT Customer Service Center', () => {
   })
 
   it('displays an error message when the phone becomes required but is not filled in before the form submission', () => {
+    cy.clock()
+
     cy.get('#firstName').type('Walmyr')
     cy.get('#lastName').type('Lima e Silva Filho')
     cy.get('#email').type('walmyr@talkingabouttesting.com')
@@ -44,6 +58,10 @@ describe('TAT Customer Service Center', () => {
     cy.contains('button', 'Send').click()
 
     cy.get('.error').should('be.visible')
+
+    cy.tick(3000)
+
+    cy.get('.error').should('not.be.visible')
   })
 
   it('fills and clears the first name, last name, email, and phone fields', () => {
@@ -70,15 +88,27 @@ describe('TAT Customer Service Center', () => {
   })
 
   it('displays an error message when submitting the form without filling the required fields', () => {
+    cy.clock()
+
     cy.contains('button', 'Send').click()
 
     cy.get('.error').should('be.visible')
+
+    cy.tick(3000)
+
+    cy.get('.error').should('not.be.visible')
   })
 
   it('successfully submits the form using a custom command', () => {
+    cy.clock()
+
     cy.fillMandatoryFieldsAndSubmit()
 
     cy.get('.success').should('be.visible')
+
+    cy.tick(3000)
+
+    cy.get('.success').should('not.be.visible')
   })
 
   it('selects a product (YouTube) by its content', () => {
