@@ -3,7 +3,7 @@ describe('TAT Customer Service Center', () => {
     cy.visit('./src/index.html')
   })
 
-  it('check application title', () => {
+  it('checks the application title', () => {
     cy.title().should('be.equal', 'TAT Customer Service Center')
   })
 
