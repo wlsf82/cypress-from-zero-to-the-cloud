@@ -1,6 +1,6 @@
 # 🌲 Cypress, from Zero to the Cloud ☁️
 
-Sample project from the "Cypress, from zero to the cloud" course from the [Talking About Testing school](https://udemy.com/user/walmyr).s
+Sample project from the "Cypress, from zero to the cloud" course from the [Talking About Testing school](https://udemy.com/user/walmyr).
 
 ## Pre-requirements
 
