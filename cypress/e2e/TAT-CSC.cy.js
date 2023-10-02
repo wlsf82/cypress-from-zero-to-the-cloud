@@ -211,7 +211,8 @@ describe('TAT Customer Service Center', () => {
   })
 
   it('fills in the text area field using the invoke command', () => {
-    cy.get('#open-text-area').invoke('val', 'some text')
+    cy.get('#open-text-area')
+      .invoke('val', 'some text')
       .should('have.value', 'some text')
   })
 
