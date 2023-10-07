@@ -28,6 +28,6 @@
   "license": "MIT",
   "homepage": "https://github.com/wlsf82/cypress-from-zero-to-the-cloud#readme",
   "devDependencies": {
-    "cypress": "^13.1.0"
+    "cypress": "^13.3.0"
   }
 }
