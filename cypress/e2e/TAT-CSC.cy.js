@@ -86,4 +86,13 @@ describe('TAT Customer Service Center', () => {
   it('selects a product (Blog) by its index', () => {
     cy.get('#product').select(1).should('have.value', 'blog')
   })
+  it('checks the type of service "Feedback"', () => {
+    cy.get('[name="tat-service"]').check('feedback').should('be.checked')
+  })
+  it('checks each type of service', () => {
+    cy.get('[name="tat-service"]').each(service => {
+      cy.wrap(service).check().should('be.checked')
+    })
+  })
+
 })
