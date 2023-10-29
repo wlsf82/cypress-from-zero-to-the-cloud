@@ -89,7 +89,7 @@ describe('TAT Customer Service Center', () => {
   it('checks the type of service "Feedback"', () => {
     cy.get('[name="tat-service"]').check('feedback').should('be.checked')
   })
-  it.only('checks each type of service', () => {
+  it('checks each type of service', () => {
     cy.get('[name="tat-service"]').each(service => {
       cy.wrap(service).check().should('be.checked')
     })
