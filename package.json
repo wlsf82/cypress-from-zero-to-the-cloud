@@ -26,5 +26,8 @@
   "homepage": "https://github.com/wlsf82/cypress-from-zero-to-the-cloud#readme",
   "dependencies": {
     "cypress": "^13.3.3"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.3"
   }
 }
