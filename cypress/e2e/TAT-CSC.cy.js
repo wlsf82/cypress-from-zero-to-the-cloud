@@ -26,7 +26,7 @@ describe("TAT Customer Service Center", () => {
 
     cy.get("#phone").should("have.value", "");
   });
-  it.only("displays an error message when the phone becomes required but is not filled in before the form submission", () => {
+  it("displays an error message when the phone becomes required but is not filled in before the form submission", () => {
     cy.get("#firstName").type("Hello");
     cy.get("#lastName").type("World");
     cy.get("#email").type("hello@world.com");
@@ -98,5 +98,31 @@ describe("TAT Customer Service Center", () => {
       .should("be.checked");
 
     cy.get("@checkboxes").last().uncheck().should("not.be.checked");
+  });
+  it("selects a file from the fixtures folder", () => {
+    cy.get("#file-upload")
+      .selectFile("cypress/fixtures/example.json")
+      .should((input) => {
+        expect(input[0].files[0].name).to.equal("example.json");
+      });
+  });
+  it("selects a file simulating a drag-and-drop", () => {
+    cy.get("#file-upload")
+      .selectFile("cypress/fixtures/example.json", {
+        action: "drag-drop",
+      })
+      .should((input) => {
+        const name = input[0].files[0].name;
+        expect(name).to.equal("example.json");
+      });
+  });
+  it("selects a file using a fixture to which an alias was given", () => {
+    cy.fixture("example.json").as("file");
+    cy.get("#file-upload")
+      .selectFile("@file")
+      .should((input) => {
+        const name = input[0].files[0].name;
+        expect(name).to.equal("example.json");
+      });
   });
 });
