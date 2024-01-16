@@ -4,7 +4,10 @@
   "description": "English version the 🌲 Cypress, from Zero to the Cloud ☁️ course, from the Talking About Testing online school.",
   "main": "src/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:open": "cypress open",
+    "cy:open:mobile": "cypress open --config viewportWidth=410 viewportHeight=880",
+    "test:mobile": "cypress open --config viewportWidth=410 viewportHeight=880",
+    "test": "cypress run"
   },
   "repository": {
     "type": "git",
@@ -22,5 +25,8 @@
   ],
   "author": "Walmyr <wlsf82@gmail.com> (https://walmyr.dev/)",
   "license": "MIT",
-  "homepage": "https://github.com/wlsf82/cypress-from-zero-to-the-cloud#readme"
+  "homepage": "https://github.com/wlsf82/cypress-from-zero-to-the-cloud#readme",
+  "devDependencies": {
+    "cypress": "^13.1.0"
+  }
 }

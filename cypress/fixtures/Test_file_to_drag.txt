@@ -1,0 +1,2 @@
+This functionality, as the name suggests, is used for selecting files.
+Such a command is useful when we need to include an attachment to a form, as the TAT CSC application allows us to do.

@@ -21,7 +21,7 @@ It's great to have you here. I'm sure you will love this course. ❤️
 
 ## Let's start
 
-Go to the [course structure](./lessons/_course-structure_.md) section.
+Go to the [course structure](./_course-structure_.md) section.
 
 ___
 
